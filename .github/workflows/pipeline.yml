@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   build:
-    environment: sandbox
+    #environment: sandbox
     env:
       TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
     runs-on: ubuntu-20.04
