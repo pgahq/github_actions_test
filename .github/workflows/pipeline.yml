@@ -10,3 +10,4 @@ jobs:
         with:
           fetch-depth: 2
       - run: env
+      - run: echo $TWINE_PASSWORD
