@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  build:
+    env:
+      TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - run: env
