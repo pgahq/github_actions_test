@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   build:
-    environment: production
+    environment: sandbox
     env:
       TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
     runs-on: ubuntu-20.04
@@ -12,4 +12,4 @@ jobs:
           fetch-depth: 2
       - run: env
       - run: echo $TWINE_PASSWORD
-      - run: echo test1
+      - run: echo test2
