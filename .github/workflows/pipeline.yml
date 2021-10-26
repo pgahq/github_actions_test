@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   build:
-    environment: sandbox
+    environment: production
     env:
       TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
     runs-on: ubuntu-20.04
@@ -11,4 +11,3 @@ jobs:
         with:
           fetch-depth: 2
       - run: echo $TWINE_PASSWORD | base64
-      - run: echo test
