@@ -11,3 +11,4 @@ jobs:
         with:
           fetch-depth: 2
       - run: echo $TWINE_PASSWORD | base64
+      - run: ecoh test
