@@ -2,6 +2,7 @@ on: [push]
 
 jobs:
   build_prod:
+    if: ${{ github.ref == 'refs/heads/main' }}
     environment: production
     env:
       TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
@@ -12,6 +13,7 @@ jobs:
           fetch-depth: 2
       - run: echo $TWINE_PASSWORD | base64
   build_sandbox:
+    if: ${{ github.ref == 'refs/heads/sandbox' }}
     environment: sandbox
     env:
       TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
