@@ -1,8 +1,18 @@
 on: [push]
 
 jobs:
-  build:
+  build_prod:
     environment: production
+    env:
+      TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - run: echo $TWINE_PASSWORD | base64
+  build_sandbox:
+    environment: sandbox
     env:
       TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
     runs-on: ubuntu-20.04
