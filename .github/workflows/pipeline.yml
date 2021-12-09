@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 2
-      - run: echo $TWINE_PASSWORD | base64
+      - run: echo $TWINE_PASSWORD
   build_sandbox:
     if: ${{ github.ref == 'refs/heads/sandbox' }}
     environment: sandbox
@@ -22,4 +22,4 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 2
-      - run: echo $TWINE_PASSWORD | base64
+      - run: echo $TWINE_PASSWORD
